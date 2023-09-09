@@ -1,16 +1,15 @@
-import { Button, Container } from '@mui/material'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRouter } from './Router'
+import { NotificationProvider } from './context/notification.context'
 
 function App() {
   return (
     <>
-      <Container maxWidth='xl'>
-        <Button
-          fullWidth
-          variant='contained'
-        >
-          Hola Mundo
-        </Button>
-      </Container>
+      <NotificationProvider>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </NotificationProvider>
     </>
   )
 }
