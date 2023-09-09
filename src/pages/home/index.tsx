@@ -1,7 +1,12 @@
 import { Button, Container } from '@mui/material'
 import React from 'react'
+import { useNotification } from '../../context/useNotification'
 
 export const HomePage: React.FC<object> = () => {
+  const { getError } = useNotification()
+  const handleClick = () => {
+    getError('Hola mundo')
+  }
   return (
     <>
       <Container
@@ -11,6 +16,7 @@ export const HomePage: React.FC<object> = () => {
         <Button
           fullWidth
           variant='contained'
+          onClick={handleClick}
         >
           Home Page
         </Button>
